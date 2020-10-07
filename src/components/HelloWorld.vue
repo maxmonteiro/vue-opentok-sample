@@ -72,6 +72,14 @@ export default {
           width: '100%',
           height: '100%'
         });
+        session.unpublish(publisher_1);
+
+        var publisher_2 = OT.initPublisher('publisher', {
+          insertMode: 'append',
+          width: '100%',
+          height: '100%'
+        });
+        session.publish(publisher_2);
       });
 
 
@@ -84,7 +92,7 @@ export default {
 
 
       // Create a publisher
-      var publisher = OT.initPublisher('publisher', {
+      var publisher_1 = OT.initPublisher('publisher', {
         insertMode: 'append',
         width: '100%',
         height: '100%'
@@ -97,7 +105,7 @@ export default {
           console.log(error);
         } else {
           console.log('connected')
-          session.publish(publisher);
+          session.publish(publisher_1);
         }
       });      
     }
